@@ -947,11 +947,6 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-    .page-footer {
-        background-color: #2e2f42;
-        padding: 96px 0;
-        }
-
     .page-footer .container {
         align-items: start;
         padding-left: 108px;
@@ -965,7 +960,6 @@ button {
 
     .footer-container-logo {
         width: 264px;
-        height: 112px;
         align-items: start;
     }
 
@@ -976,13 +970,11 @@ button {
     
     .footer-social-text {
         text-align: start;
-        margin: 0;
-        margin-bottom: 16px;
     }
 
     .subscribeform-container {
+        margin-top: 0;
         margin-right: auto;
-        display: flex;
     }
 
     .subscribeform-container-text {
@@ -990,7 +982,6 @@ button {
     }
 
     .subscribeform {
-        display: flex;
         gap: 24px;
         flex-direction: row;
     }
@@ -1007,19 +998,17 @@ button {
 
     .page-footer .container {
         flex-direction: row;
+        padding: 0 15px;
     }
 
     .footer-wrap-tablet {
         gap: 0;
-    }
-
-    .page-footer .container {
-        display: flex;
-        align-items: baseline;
+        display: inherit;
     }
 
     .footer-container-logo {
         margin-right: 120px;
+        margin-bottom: 0;
     }
 
     .subscribeform-container {
