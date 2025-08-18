@@ -288,6 +288,9 @@ button {
 .mobile-menu.is-open .mobile-menu-nav-list>li:nth-child(3) .mobile-menu-nav-link {
     transition-delay: 500ms;
 }
+
+
+
 .mobile-menu-nav-link {    
     font-weight: 700;
     font-size: 36px;
@@ -305,7 +308,9 @@ button {
 }
 
 .mobile-menu-nav-link:hover,
-.mobile-menu-nav-link:focus {
+.mobile-menu-nav-link:focus,
+.mobile-menu-nav-link:active,
+.mobile-menu-nav-link.current {
     color: #404bbf;
 }
 
@@ -313,8 +318,6 @@ button {
     display: flex;
     flex-direction: column;
     gap: 24px;
-
-    margin-bottom: 48px;
 }
 
 .mobile-menu-contacts-link {
@@ -323,17 +326,22 @@ button {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #434455;
+    font-style: normal;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-contacts-link:focus,
-.mobile-menu-contacts-link:active {
+.mobile-menu-contacts-link:hover,
+.mobile-menu-contacts-link:active,
+.mobile-menu-contacts-link.current {
     color: #404bbf;
 }
 
 .mobile-section-team-socials {
     display: flex;
     gap: 40px;
+
+    margin-top: 48px;
 }
 
 @media screen and (min-width: 768px) {
@@ -349,14 +357,20 @@ button {
 .section-start {
     background-color: #2e2f42;
     padding: 72px 0;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-            rgba(46, 47, 66, 0.7)),
-        url("../images/people-office.jpg");
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),
+        url("../images/mobile/section-start/background-mobile-min.jpg");
     max-width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     margin: 0 auto;
+}
+
+@media (min-resolution: 192dpi) {
+    .section-start {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),
+            url("../images/mobile/section-start/background-mobile@2x-min.jpg");
+    }
 }
 
 .start-title {
@@ -399,7 +413,10 @@ button {
 
 @media screen and (min-width: 768px) {
     .section-start {
-    padding: 112px 0;
+        padding: 112px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url("../images/tablet/section-start/background-tablet-min.jpg");
     }
 
     .start-title {
@@ -411,13 +428,34 @@ button {
     }
 }
 
+/* background for tablet retina */
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    .section-start {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url("../images/tablet/section-start/background-tablet@2x-min.jpg");
+    }
+}
+
 @media screen and (min-width: 1158px) {
     .section-start {
         padding: 188px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url("../images/desktop/section-start/background-desktop-min.jpg");
     }
 
     .start-title {
         margin-bottom: 48px;
+    }
+}
+
+/* background for desktop retina */
+@media screen and (min-width: 1158px) and (min-resolution: 192dpi) {
+    .section-start {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url("../images/desktop/section-start/background-desktop@2x-min.jpg");
     }
 }
 
@@ -761,6 +799,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    margin-bottom: 72px;
 }
 
 .footer-logo {
@@ -789,12 +829,12 @@ button {
 
     text-align: center;
     margin-bottom: 16px;
-    margin-top: 72px;
 }
 
 .section-footer-socials {
     display: flex;
     gap: 16px;
+    justify-content: center;
 }
 
 .footer-list-item {
@@ -909,11 +949,13 @@ button {
 @media screen and (min-width: 768px) {
     .page-footer {
         background-color: #2e2f42;
-        padding: 96px 0 96px 92px;
+        padding: 96px 0;
         }
 
     .page-footer .container {
-        align-items: baseline;
+        align-items: start;
+        padding-left: 108px;
+        padding-right: 108px;
     }
 
     .footer-wrap-tablet {
@@ -1164,10 +1206,12 @@ button {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    fill: transparent;
+    flex-shrink: 0;
 }
 
 #user-privacy:checked+.madalform-form-policy-label .madalform-form-policy-span {
